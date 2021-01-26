@@ -46,8 +46,6 @@ function App() {
   }
 
   const sendMsg = (msg) => {
-    console.log(data);
-    console.log(activeName);
     const newMsg = {
       id: data[activeName].length + 1,
       message: msg,
@@ -59,7 +57,6 @@ function App() {
   };
 
   const handleClick = (name) => {
-    console.log(name);
     setActiveName(name);
   };
 
