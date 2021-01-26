@@ -9,8 +9,11 @@ function Compose(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (msg === undefined) {
+      return;
+    }
     props.sendMsg(msg);
-    setMsg("");
+    setMsg(undefined);
   };
 
   const inputStyle = {

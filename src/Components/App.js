@@ -2,41 +2,13 @@ import "../Styles/App.css";
 import React, { useState } from "react";
 import Chat from "./Chat";
 import FriendsList from "./FriendsList";
+import { mockData } from "./Seed.js";
 
 function App() {
-  const mockData = {
-    Nildo: [
-      {
-        id: 0,
-        message:
-          "First message: This is the first message from the other user.",
-        fromMe: false,
-      },
-      {
-        id: 1,
-        message:
-          "Second message: this is the first message from me. Second message: this is the first message from me.",
-        fromMe: true,
-      },
-    ],
-
-    Daniel: [
-      {
-        id: 0,
-        message:
-          "First message: This is the first message from the other user.",
-        fromMe: false,
-      },
-      {
-        id: 1,
-        message: "Second message: this is the first message from me.",
-        fromMe: true,
-      },
-    ],
-  };
-
   const [data, setData] = useState(mockData);
   const [activeName, setActiveName] = useState("Nildo");
+
+  // Generate list of Friends
   const mockList = [];
   for (const friend in mockData) {
     mockList.push({
@@ -46,8 +18,6 @@ function App() {
   }
 
   const sendMsg = (msg) => {
-    console.log(data);
-    console.log(activeName);
     const newMsg = {
       id: data[activeName].length + 1,
       message: msg,
@@ -59,7 +29,6 @@ function App() {
   };
 
   const handleClick = (name) => {
-    console.log(name);
     setActiveName(name);
   };
 
