@@ -15,7 +15,7 @@ function Chat(props) {
         <Messages messages={props.data} />
       </div>
       <div className="message-input">
-        <Compose sendMsg={props.sendMsg} />
+        <Compose sendMsg={props.sendMsg} activeName={props.activeName} />
       </div>
     </div>
   );

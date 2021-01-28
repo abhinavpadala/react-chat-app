@@ -2,18 +2,21 @@ import React, { useState } from "react";
 import "../Styles/App.css";
 
 function Compose(props) {
-  const [msg, setMsg] = useState(undefined);
+  const tempMessages = {
+    Nildo: "",
+    Daniel: "",
+  };
+
+  const [msgs, setMsgs] = useState(tempMessages);
+
   const handleChange = (e) => {
-    setMsg(e.target.value);
+    setMsgs({ ...msgs, [props.activeName]: e.target.value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (msg === undefined) {
-      return;
-    }
-    props.sendMsg(msg);
-    setMsg(undefined);
+    props.sendMsg(msgs[props.activeName]);
+    setMsgs({ ...tempMessages, [props.activeName]: "" });
   };
 
   const inputStyle = {
@@ -31,7 +34,7 @@ function Compose(props) {
       <input
         type="text"
         name="message-compose"
-        value={msg || ""}
+        value={msgs[props.activeName] || ""}
         onChange={handleChange}
         style={inputStyle}
       />
