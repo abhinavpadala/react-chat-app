@@ -14,4 +14,8 @@ npm install
 npm start
 ```
 
+###Screenshot
+<img width="1080" alt="react-chat-app" src="https://user-images.githubusercontent.com/8408236/106135143-d2bc1780-6167-11eb-92cb-160e4e17dd3b.png">
+
+
 
