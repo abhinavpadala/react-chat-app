@@ -3,8 +3,8 @@ import "../Styles/App.css";
 
 function Compose(props) {
   const tempMessages = {
-    Nildo: "",
-    Daniel: "",
+    Eren: "",
+    Armin: "",
   };
 
   const [msgs, setMsgs] = useState(tempMessages);
