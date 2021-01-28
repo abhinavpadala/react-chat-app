@@ -6,7 +6,7 @@ import { mockData } from "./Seed.js";
 
 function App() {
   const [data, setData] = useState(mockData);
-  const [activeName, setActiveName] = useState("Nildo");
+  const [activeName, setActiveName] = useState("Armin");
 
   // Generate list of Friends
   const mockList = [];
